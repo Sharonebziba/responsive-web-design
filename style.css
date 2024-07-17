@@ -1,0 +1,315 @@
+/* Base styles */
+:root {
+    --primary-color: #FFD700;
+    --secondary-color: #000000;
+    --text-color: #FFFFFF;
+    --background-color: #1A1A1A;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* Typography */
+h1, h2, h3 {
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* Header and Navigation */
+header {
+    background-color: var(--secondary-color);
+    padding: 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu li {
+    margin-left: 1rem;
+}
+
+.nav-menu a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--primary-color);
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none;
+    cursor: pointer;
+}
+
+/* Main content */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Hero section */
+.hero {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.hero h1 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #FFC000;
+}
+
+/* Features section */
+.features {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 4rem;
+}
+
+.feature {
+    flex-basis: calc(33.33% - 2rem);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.feature i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--secondary-color);
+        padding: 1rem;
+    }
+
+    .nav-menu li {
+        margin: 0.5rem 0;
+    }
+
+    .nav-toggle-label {
+        display: block;
+    }
+
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        display: block;
+        background-color: var(--primary-color);
+        height: 2px;
+        width: 2rem;
+        border-radius: 2px;
+        position: relative;
+    }
+
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        content: '';
+        position: absolute;
+    }
+
+    .nav-toggle-label span::before {
+        bottom: 7px;
+    }
+
+    .nav-toggle-label span::after {
+        top: 7px;
+    }
+
+    .nav-toggle:checked ~ .nav-menu {
+        display: flex;
+    }
+
+    .feature {
+        flex-basis: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero {
+        padding: 2rem 0;
+    }
+    /* Add these styles to your existing styles.css file */
+
+/* About page styles */
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+    max-width: 100%;
+    height: auto;
+}
+
+.about-text {
+    flex: 2;
+    min-width: 300px;
+}
+
+.about-text ul {
+    margin-left: 1.5rem;
+}
+
+/* Menu page styles */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.menu-item {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+}
+
+.menu-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.menu-item h3, .menu-item p, .menu-item .price {
+    padding: 0.5rem 1rem;
+}
+
+.menu-item .price {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Contact page styles */
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.contact-form, .contact-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label, .contact-form input, .contact-form textarea {
+    margin-bottom: 1rem;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 0.5rem;
+    border: 1px solid var(--primary-color);
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.contact-info i {
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .about-content, .contact-content {
+        flex-direction: column;
+    }
+}
+}
